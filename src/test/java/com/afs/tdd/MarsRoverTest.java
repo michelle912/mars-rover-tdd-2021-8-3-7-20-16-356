@@ -15,11 +15,24 @@ public class MarsRoverTest {
 
         // when
         MarsRover marsRover = new MarsRover();
-        marsRover.move();
+        marsRover.executeCommand(MOVE);
         String result = marsRover.getReport();
 
         // then
         assertEquals("0 1 N", result);
+    }
+
+    @Test
+    public void should_move_towards_east_when_executeCommand_given_command_is_M_and_direction_is_E() {
+        // given
+        MarsRover marsRover = new MarsRover(0,0, "E");
+
+        // when
+        marsRover.executeCommand(MOVE);
+        String result = marsRover.getReport();
+
+        // then
+        assertEquals("1 0 E", result);
     }
 
 
