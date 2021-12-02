@@ -169,4 +169,17 @@ public class MarsRoverTest {
         // then
         assertEquals("0 0 N", result);
     }
+
+    @Test
+    public void should_move_north_and_turn_left_and_move_west_and_turn_right_when_executeCommands_given_command_is_MLMR_and_direction_is_N() {
+        // given
+        MarsRover marsRover = new MarsRover(0,0, "W");
+
+        // when
+        marsRover.executeCommands("MLMR");
+        String result = marsRover.getReport();
+
+        // then
+        assertEquals("-1 1 N", result);
+    }
 }
