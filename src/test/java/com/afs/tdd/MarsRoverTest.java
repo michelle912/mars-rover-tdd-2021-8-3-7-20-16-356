@@ -156,4 +156,17 @@ public class MarsRoverTest {
         // then
         assertEquals("0 0 W", result);
     }
+
+    @Test
+    public void should_turn_to_north_when_executeCommand_given_command_is_R_and_direction_is_W() {
+        // given
+        MarsRover marsRover = new MarsRover(0,0, "W");
+
+        // when
+        marsRover.executeCommand(TURNRIGHT);
+        String result = marsRover.getReport();
+
+        // then
+        assertEquals("0 0 N", result);
+    }
 }
