@@ -33,10 +33,16 @@ public class MarsRover {
     }
 
     private void move() {
-        if (direction.equals("N")) {
-            locationY++;
-        } else if (direction.equals("E")) {
-            locationX++;
+        switch (direction) {
+            case "N":
+                locationY++;
+                break;
+            case "E":
+                locationX++;
+                break;
+            case "S":
+                locationY--;
+                break;
         }
     }
 }
