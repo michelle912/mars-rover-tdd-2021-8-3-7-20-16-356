@@ -16,7 +16,7 @@ public class MarsRover {
         this.locationY = 0;
     }
 
-    public MarsRover(Integer locationX, Integer locationY, String direction, ) {
+    public MarsRover(Integer locationX, Integer locationY, String direction) {
         this.direction = direction;
         this.locationX = locationX;
         this.locationY = locationY;
@@ -35,6 +35,8 @@ public class MarsRover {
     private void move() {
         if (direction.equals("N")) {
             locationY++;
+        } else if (direction.equals("E")) {
+            locationX++;
         }
     }
 }
