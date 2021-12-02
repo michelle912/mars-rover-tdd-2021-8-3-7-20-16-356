@@ -59,6 +59,9 @@ public class MarsRover {
             case "W":
                 direction = "S";
                 break;
+            case "S":
+                direction = "E";
+                break;
         }
     }
 }
