@@ -43,6 +43,9 @@ public class MarsRover {
             case "S":
                 locationY--;
                 break;
+            case "W":
+                locationX--;
+                break;
         }
     }
 }
