@@ -1,5 +1,8 @@
 package com.afs.tdd;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class MarsRover {
 
     private String direction;
@@ -20,6 +23,12 @@ public class MarsRover {
         this.direction = direction;
         this.locationX = locationX;
         this.locationY = locationY;
+    }
+
+    public void executeCommands(String commands) {
+        List<String> commandList = Arrays.asList(commands.split(""));
+        
+        commandList.forEach(this::executeCommand);
     }
 
     public void executeCommand(String command) {
