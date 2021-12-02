@@ -27,6 +27,8 @@ public class MarsRover {
             this.move();
         } else if (Commands.L.name().equals(command)) {
             this.turnLeft();
+        } else if (Commands.R.name().equals(command)) {
+            this.turnRight();
         }
     }
 
@@ -65,6 +67,12 @@ public class MarsRover {
             case "E":
                 direction = "N";
                 break;
+        }
+    }
+
+    private void turnRight() {
+        if (direction.equals("N")) {
+            direction = "E";
         }
     }
 }
