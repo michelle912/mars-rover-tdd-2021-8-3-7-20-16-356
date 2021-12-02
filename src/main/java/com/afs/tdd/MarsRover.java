@@ -25,6 +25,8 @@ public class MarsRover {
     public void executeCommand(String command) {
         if (Commands.M.name().equals(command)) {
             this.move();
+        } else if (Commands.L.name().equals(command)) {
+            this.turnLeft();
         }
     }
 
@@ -46,6 +48,12 @@ public class MarsRover {
             case "W":
                 locationX--;
                 break;
+        }
+    }
+
+    private void turnLeft() {
+        if (direction.equals("N")) {
+            direction = "W";
         }
     }
 }
