@@ -52,8 +52,13 @@ public class MarsRover {
     }
 
     private void turnLeft() {
-        if (direction.equals("N")) {
-            direction = "W";
+        switch (direction) {
+            case "N":
+                direction = "W";
+                break;
+            case "W":
+                direction = "S";
+                break;
         }
     }
 }
