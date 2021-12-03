@@ -1,5 +1,6 @@
 package com.afs.tdd;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -10,14 +11,23 @@ public class MarsRoverTest {
     private static final String TURNLEFT = "L";
     private static final String TURNRIGHT = "R";
 
+    private MarsRoverController marsRoverController;
+    private MarsRover marsRover;
+
+    @BeforeEach
+    void setUp() {
+        marsRoverController = new MarsRoverController();
+        marsRover = new MarsRover();
+    }
+
     // move
     @Test
     public void should_move_towards_north_when_executeCommand_given_command_is_M_and_direction_is_N() {
         // given
 
+
         // when
-        MarsRover marsRover = new MarsRover();
-        marsRover.executeCommand(MOVE);
+        marsRoverController.executeCommand(MOVE, marsRover);
         String result = marsRover.getReport();
 
         // then
@@ -30,7 +40,7 @@ public class MarsRoverTest {
         MarsRover marsRover = new MarsRover(0,0, "E");
 
         // when
-        marsRover.executeCommand(MOVE);
+        marsRoverController.executeCommand(MOVE, marsRover);
         String result = marsRover.getReport();
 
         // then
@@ -43,7 +53,7 @@ public class MarsRoverTest {
         MarsRover marsRover = new MarsRover(0,0, "S");
 
         // when
-        marsRover.executeCommand(MOVE);
+        marsRoverController.executeCommand(MOVE, marsRover);
         String result = marsRover.getReport();
 
         // then
@@ -56,7 +66,7 @@ public class MarsRoverTest {
         MarsRover marsRover = new MarsRover(0,0, "W");
 
         // when
-        marsRover.executeCommand(MOVE);
+        marsRoverController.executeCommand(MOVE, marsRover);
         String result = marsRover.getReport();
 
         // then
@@ -69,7 +79,7 @@ public class MarsRoverTest {
         MarsRover marsRover = new MarsRover(0,0, "N");
 
         // when
-        marsRover.executeCommand(TURNLEFT);
+        marsRoverController.executeCommand(TURNLEFT, marsRover);
         String result = marsRover.getReport();
 
         // then
@@ -82,7 +92,7 @@ public class MarsRoverTest {
         MarsRover marsRover = new MarsRover(0,0, "W");
 
         // when
-        marsRover.executeCommand(TURNLEFT);
+        marsRoverController.executeCommand(TURNLEFT, marsRover);
         String result = marsRover.getReport();
 
         // then
@@ -96,7 +106,7 @@ public class MarsRoverTest {
         MarsRover marsRover = new MarsRover(0,0, "S");
 
         // when
-        marsRover.executeCommand(TURNLEFT);
+        marsRoverController.executeCommand(TURNLEFT, marsRover);
         String result = marsRover.getReport();
 
         // then
@@ -110,7 +120,7 @@ public class MarsRoverTest {
         MarsRover marsRover = new MarsRover(0,0, "E");
 
         // when
-        marsRover.executeCommand(TURNLEFT);
+        marsRoverController.executeCommand(TURNLEFT, marsRover);
         String result = marsRover.getReport();
 
         // then
@@ -124,7 +134,7 @@ public class MarsRoverTest {
         MarsRover marsRover = new MarsRover(0,0, "N");
 
         // when
-        marsRover.executeCommand(TURNRIGHT);
+        marsRoverController.executeCommand(TURNRIGHT, marsRover);
         String result = marsRover.getReport();
 
         // then
@@ -137,7 +147,7 @@ public class MarsRoverTest {
         MarsRover marsRover = new MarsRover(0,0, "E");
 
         // when
-        marsRover.executeCommand(TURNRIGHT);
+        marsRoverController.executeCommand(TURNRIGHT, marsRover);
         String result = marsRover.getReport();
 
         // then
@@ -150,7 +160,7 @@ public class MarsRoverTest {
         MarsRover marsRover = new MarsRover(0,0, "S");
 
         // when
-        marsRover.executeCommand(TURNRIGHT);
+        marsRoverController.executeCommand(TURNRIGHT, marsRover);
         String result = marsRover.getReport();
 
         // then
@@ -163,7 +173,7 @@ public class MarsRoverTest {
         MarsRover marsRover = new MarsRover(0,0, "W");
 
         // when
-        marsRover.executeCommand(TURNRIGHT);
+        marsRoverController.executeCommand(TURNRIGHT, marsRover);
         String result = marsRover.getReport();
 
         // then
@@ -176,7 +186,7 @@ public class MarsRoverTest {
         MarsRover marsRover = new MarsRover(0,0, "N");
 
         // when
-        marsRover.executeCommands("MLMR");
+        marsRoverController.executeCommands("MLMR", marsRover);
         String result = marsRover.getReport();
 
         // then

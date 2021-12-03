@@ -1,20 +1,13 @@
 package com.afs.tdd;
 
-import java.util.Arrays;
-import java.util.List;
-
 public class MarsRover {
 
     private String direction;
     private Integer locationX;
     private Integer locationY;
 
-    public enum Commands {
-        M, L, R;
-    }
-
     public MarsRover() {
-        this.direction = "N";
+        this.direction = "N"; //TODO: enum
         this.locationX = 0;
         this.locationY = 0;
     }
@@ -25,27 +18,11 @@ public class MarsRover {
         this.locationY = locationY;
     }
 
-    public void executeCommands(String commands) {
-        List<String> commandList = Arrays.asList(commands.split(""));
-        
-        commandList.forEach(this::executeCommand);
-    }
-
-    public void executeCommand(String command) {
-        if (Commands.M.name().equals(command)) {
-            this.move();
-        } else if (Commands.L.name().equals(command)) {
-            this.turnLeft();
-        } else if (Commands.R.name().equals(command)) {
-            this.turnRight();
-        }
-    }
-
     public String getReport() {
         return String.format("%d %d %s", locationX, locationY, direction);
     }
 
-    private void move() {
+    protected void move() {
         switch (direction) {
             case "N":
                 locationY++;
@@ -62,7 +39,7 @@ public class MarsRover {
         }
     }
 
-    private void turnLeft() {
+    protected void turnLeft() {
         switch (direction) {
             case "N":
                 direction = "W";
@@ -79,7 +56,7 @@ public class MarsRover {
         }
     }
 
-    private void turnRight() {
+    protected void turnRight() {
         switch (direction) {
             case "N":
                 direction = "E";
